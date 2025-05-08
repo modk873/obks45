@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أرشيف الدول العربية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/arab-world-map.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            color: #f8f9fa;
+        }
+        .countries-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        .countries-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .countries-section h2:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #3498db;
+            margin: 1rem auto;
+        }
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .country-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        .country-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .country-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 3px solid #3498db;
+            padding: 3px;
+        }
+        .country-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .country-item a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .country-item a:hover {
+            background: #2980b9;
+            text-decoration: none;
+        }
+        .search-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .search-form button {
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .search-form button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>أرشيف الدول العربية</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="documents.html">الوثائق</a></li>
+                    <li><a href="about.html">عن الموقع</a></li>
+                    <li><a href="signin.html" id="authLink">تسجيل الدخول</a></li>
+                    <li><a href="signup.html" id="signupLink">إنشاء حساب</a></li>
+                    <li><a href="profile.html" id="profileLink" style="display: none;">الملف الشخصي</a></li>
+                    <li><a href="#" id="logoutLink" style="display: none;" class="logout-btn">تسجيل الخروج</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>مرحباً بكم في أرشيف الدول العربية</h1>
+                <p>استكشف تاريخ وتراث الدول العربية</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="countries-section">
+        <div class="container">
+            <div class="search-section">
+                <form class="search-form">
+                    <input type="text" placeholder="ابحث عن دولة...">
+                    <button type="submit"><i class="fas fa-search"></i> بحث</button>
+                </form>
+            </div>
+            <h2>الدول العربية</h2>
+            <div class="countries-grid">
+                <div class="country-item">
+                    <img src="images/algeria-flag.png" alt="الجزائر">
+                    <h3>الجزائر</h3>
+                    <a href="algeria.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/tunisia-flag.png" alt="تونس">
+                    <h3>تونس</h3>
+                    <a href="tunisia.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/libya-flag.png" alt="ليبيا">
+                    <h3>ليبيا</h3>
+                    <a href="libya.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/qatar-flag.png" alt="قطر">
+                    <h3>قطر</h3>
+                    <a href="qatar.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/jordan-flag.png" alt="الأردن">
+                    <h3>الأردن</h3>
+                    <a href="jordan.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/sudan-flag.png" alt="السودان">
+                    <h3>السودان</h3>
+                    <a href="sudan.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/palestine-flag.png" alt="فلسطين">
+                    <h3>فلسطين</h3>
+                    <a href="palestine.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/egypt-flag.png" alt="مصر">
+                    <h3>مصر</h3>
+                    <a href="egypt.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/saudi-flag.png" alt="المملكة العربية السعودية">
+                    <h3>المملكة العربية السعودية</h3>
+                    <a href="saudi.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/uae-flag.png" alt="الإمارات العربية المتحدة">
+                    <h3>الإمارات العربية المتحدة</h3>
+                    <a href="uae.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/iraq-flag.png" alt="العراق">
+                    <h3>العراق</h3>
+                    <a href="iraq.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/syria-flag.png" alt="سوريا">
+                    <h3>سوريا</h3>
+                    <a href="syria.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/lebanon-flag.png" alt="لبنان">
+                    <h3>لبنان</h3>
+                    <a href="lebanon.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/morocco-flag.png" alt="المغرب">
+                    <h3>المغرب</h3>
+                    <a href="morocco.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/mauritania-flag.png" alt="موريتانيا">
+                    <h3>موريتانيا</h3>
+                    <a href="mauritania.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/oman-flag.png" alt="عمان">
+                    <h3>عمان</h3>
+                    <a href="oman.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/yemen-flag.png" alt="اليمن">
+                    <h3>اليمن</h3>
+                    <a href="yemen.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/kuwait-flag.png" alt="الكويت">
+                    <h3>الكويت</h3>
+                    <a href="kuwait.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/bahrain-flag.png" alt="البحرين">
+                    <h3>البحرين</h3>
+                    <a href="bahrain.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/comoros-flag.png" alt="جزر القمر">
+                    <h3>جزر القمر</h3>
+                    <a href="comoros.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/djibouti-flag.png" alt="جيبوتي">
+                    <h3>جيبوتي</h3>
+                    <a href="djibouti.html">استكشف المزيد</a>
+                </div>
+                <div class="country-item">
+                    <img src="images/somalia-flag.png" alt="الصومال">
+                    <h3>الصومال</h3>
+                    <a href="somalia.html">استكشف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>أرشيف الدول العربية</h3>
+                    <p>موقع شامل يوثق تاريخ وإنجازات ومعالم الدول العربية</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <h4>مصادر ومراجع</h4>
+                        <li><a href="https://www.arab.org/">الموقع الرسمي للجامعة العربية</a></li>
+                        <li><a href="https://www.unesco.org/">منظمة اليونسكو</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-envelope"></i> info@arabcountriesarchive.com</p>
+                    <p><i class="fas fa-phone"></i> 04042007</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 أرشيف الدول العربية. جميع الحقوق محفوظة لمحمد عصام ومحمد العمري والهاجري والجلهم وأنس.</p>
+                <p>تصميم وتطوير: محمد عصام ومحمد العمري والهاجري والجلهم وأنس</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
